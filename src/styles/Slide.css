@@ -1,0 +1,49 @@
+.container-slide {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-slide {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.thumbnail {
+    margin: 0 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail img {
+    width: 60px;
+    height: 30px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.thumbnail.active img {
+    border-color: #fff;
+}
+
+.thumbnail:hover {
+    opacity: 0.7;
+}

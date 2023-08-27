@@ -1,0 +1,72 @@
+.container-footer {
+    padding: 60px 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.p1 {
+    font-size: 14px;
+    color: #777777;
+    line-height: 10px;
+}
+
+.p2 {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 10px;
+}
+
+.contact-item {
+    margin-bottom: 30px;
+}
+
+.product-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-content a {
+    text-decoration: none;
+    color: #777777;
+    font-size: 16px;
+}
+
+.shop-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 200px;
+}
+
+.shop-content a {
+    text-decoration: none;
+    color: #444444;
+    font-size: 15px;
+}
+
+.shop-content-icon img {
+    width: 20px;
+    height: 20px;
+    margin: 0px 25px 0px 0px;
+}
+
+.shop-content a:hover {
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+.product-content a:hover {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
