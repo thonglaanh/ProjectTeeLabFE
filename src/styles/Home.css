@@ -1,8 +1,9 @@
-.section-about {
-    padding: 20px 400px;
+.container-content-home {
+    align-items: center;
+    padding: 20px 150px;
 }
 
-.section-about .title {
+.title-home {
     text-align: center;
     font-size: 35px;
 }
@@ -10,6 +11,28 @@
 .section-about .content {
     text-align: center;
     width: 660px;
+    margin: 0px 256px;
     font-size: 17px;
     color: #555555;
+}
+
+.section-feedback {
+    width: 100%;
+    margin-left: 20px;
+}
+
+.feedback-image {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.feedback-image>div {
+    flex-basis: calc(25% -10px);
+    margin: 0px 7px 0px 0px;
+}
+
+.br {
+    background-color: #dddddd;
+    height: 1px;
 }

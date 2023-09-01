@@ -1,0 +1,210 @@
+.container-product-detail {
+    max-width: 820px;
+    font-size: 15px;
+    line-height: 30px;
+    margin: 50px 150px 100px 150px;
+}
+
+.product-detail {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-detail {
+    width: 1200px;
+}
+
+.product-name {
+    width: 100%;
+    font-size: 22px;
+    border-bottom: 1px #000 solid;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.product-value {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-price {
+    font-size: 30px;
+    color: #F81F1F;
+    margin: 0px 20px 0px 5px;
+}
+
+.product-oldPrice {
+    font-size: 22px;
+    text-decoration: line-through;
+    color: #949494;
+    margin-top: 3px;
+}
+
+.container-product-detail .product-description img {
+    width: 820px;
+    height: auto;
+
+}
+
+.container-product-detail .product-image .product-image-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-product-detail .product-image .thumb {
+    width: 740px;
+    height: 740px;
+    object-fit: contain;
+}
+
+.container-product-detail .product-image .img-button {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-top: 50%;
+}
+
+.container-product-detail .product-image button {
+    border: none;
+    background-color: #fff;
+    font-size: 30px;
+    color: #555555;
+}
+
+.product-color-detail {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 37px;
+}
+
+.product-size-detail {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 37px;
+}
+
+.product-size-detail .size {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #dddddd;
+    margin-right: 10px;
+    padding: 2px;
+    text-align: center;
+}
+
+.size.selected {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.product-color-detail .color-image img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #dddddd;
+    margin-right: 10px;
+    padding: 2px;
+}
+
+.color-image.selected img {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.add-cart {
+    height: 60px;
+    text-align: center;
+    width: calc(50% - 5px);
+    margin-right: 9px;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 0px;
+}
+
+.add-cart:hover {
+    opacity: 0.5;
+}
+
+.product-instruct a {
+    color: blue;
+    font-size: 17px
+}
+
+.product-instruct a:hover {
+    font-weight: normal;
+    font-size: 17px;
+    color: #F81F1F;
+}
+
+.product-quantity .button-1 {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-right: none;
+    height: 37px;
+    width: 35px;
+    border-radius: 6px 0px 0px 6px;
+
+}
+
+.product-quantity .button-2 {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-left: none;
+    height: 37px;
+    width: 35px;
+    border-radius: 0px 6px 6px 0px;
+
+}
+
+.more-product {
+    width: 1200px;
+    border-bottom: 1px solid #000;
+}
+
+.more-product p {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 70px;
+}
+
+.container-product-detail .list-item {
+    width: 1200px;
+    margin: 30px 0px 0px 0px;
+}
+
+.container-product-detail .product-content-detail {
+    margin-left: 50px;
+}
+
+.container-product-detail .image-overlay {
+    position: relative;
+    margin: 0px 0px 20px 0px;
+    width: 790px;
+    height: 45px;
+}
+
+.container-product-detail .thumbnail {
+    margin: 0 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.container-product-detail .thumbnail img {
+    width: 45px;
+    height: 45px;
+    border: 2px solid white;
+    transition: border-color 0.3s ease;
+}
+
+.container-product-detail .thumbnail.active img {
+    border-color: #000;
+}
+
+.container-product-detail .thumbnail:hover {
+    opacity: 0.7;
+}

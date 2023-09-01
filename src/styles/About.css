@@ -1,0 +1,53 @@
+.about {
+    width: 1497px;
+    margin: 50px 0px;
+}
+
+.header-about {
+    font-size: 17px;
+    color: #333;
+    font-weight: 'bold';
+    text-transform: uppercase;
+}
+
+.about p {
+    margin: 0px 150px;
+    text-align: center;
+}
+
+.about img {
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    margin: 60px 10px;
+}
+
+.title-about {
+    color: #000000;
+    font-size: 32px;
+
+    font-weight: normal;
+}
+
+.content-about {
+    font-size: 15px;
+    color: #777777;
+
+}
+
+.container-content {
+    margin: 30px 150px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+
+.container-content .content-about {
+    width: 100%;
+    line-height: 30px;
+}
+
+.container-content .title-about {
+    margin-top: 30px;
+
+}

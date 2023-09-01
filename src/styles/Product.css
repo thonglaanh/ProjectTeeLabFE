@@ -1,0 +1,42 @@
+.title-list {
+    font-size: 40px;
+    margin: 20px 0px;
+    color: #333;
+}
+
+.container-list-product {
+    margin: 0px 150px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination-btn {
+    background-color: #ddd;
+    border: none;
+    color: #333;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.pagination-btn:hover {
+    background-color: #aaa;
+}
+
+.pagination-btn.active {
+    background-color: #555;
+    color: #fff;
+}
+
+.pagination-btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

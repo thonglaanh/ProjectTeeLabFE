@@ -48,6 +48,7 @@ ul li a {
 .img-search {
     width: 20px;
     height: 20px;
+    padding: 5px 0px 0px 0px;
 
 }
 
@@ -64,7 +65,7 @@ input {
     padding: 5px 0px 5px 20px;
 }
 
-button {
+.search-button {
     background-color: #545457;
     border: none;
     height: 40px;
@@ -94,7 +95,17 @@ label {
     align-items: center;
 }
 
+.search-form input {
+    outline: none;
+}
+
 .img-search {
     width: 20px;
     height: 20px;
+}
+
+.top-icon-account img {
+    width: 30px;
+    height: 30px;
+    margin: 13px 13px 0px 13px;
 }

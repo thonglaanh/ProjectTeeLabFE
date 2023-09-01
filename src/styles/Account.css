@@ -1,0 +1,56 @@
+.container-account {
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-account-menu {
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+}
+
+.container-account-menu a {
+    text-decoration: none;
+    color: #777777;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.container-account-menu a:hover {
+    text-decoration: none;
+    color: cadetblue;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.container-account-content {
+    margin-left: 30px;
+    border-left: 1px solid #bbbbbb;
+}
+
+.container-account-content p {
+    font-size: 15px;
+    margin-left: 30px;
+}
+
+.container-bill {
+    text-align: center;
+}
+
+.table-bill {
+    width: 1200px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #ebebeb;
+    font-weight: bold;
+    margin-left: 20px
+}
+
+.table-cart p {
+    font-weight: bold;
+}

@@ -1,0 +1,26 @@
+.title-category {
+    font-size: 40px
+}
+
+.list-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.list-item>div {
+    flex-basis: calc(25%);
+}
+
+.list-item-text {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+
+.list-item-text a {
+    font-weight: bold;
+    color: black;
+}
