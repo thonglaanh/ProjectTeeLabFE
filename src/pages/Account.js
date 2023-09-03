@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import ItemBill from '../items/ItemBill'
 import moment from 'moment';
+import NoProducts from '../components/NoProducts'
 
 const Account = () => {
     const account = JSON.parse(localStorage.getItem('account'));
@@ -57,26 +58,41 @@ const Account = () => {
                     <p>Địa chỉ email : {account.email}</p>
                     <p>Ngày sinh : {moment(account.date).format('DD / MM / YYYY')}</p>
                     <p style={{ color: 'red' }}>Việt Nam</p>
+
+
+
                     <div className="container-bill">
-                        <p style={{ fontSize: '25px', fontWeight: 'normal', color: '#333333', float: 'left', marginLeft: '20px' }}>Đơn hàng của bạn</p>
-                        <div className="table-bill" >
-                            <p style={{ width: '660px', marginLeft: '10px', textAlign: 'left' }}>Thông tin sản phẩm</p>
-                            <p style={{ width: '190px' }}>Địa chỉ</p>
-                            <p style={{ width: '190px' }}>Thành tiền</p>
-                            <p style={{ width: '190px' }}>Trạng thái</p>
+                        <p style={{ fontSize: '25px', fontWeight: 'normal', color: '#333333', marginLeft: '30px', textAlign: 'left' }}>Đơn hàng của bạn</p>
+                        {listBill.length > 0 ? (
+                            <>
 
-                        </div>
+                                <div className="table-bill" >
+                                    <p style={{ width: '660px', marginLeft: '10px', textAlign: 'left' }}>Thông tin sản phẩm</p>
+                                    <p style={{ width: '190px' }}>Địa chỉ</p>
+                                    <p style={{ width: '190px' }}>Thành tiền</p>
+                                    <p style={{ width: '190px' }}>Trạng thái</p>
 
-                        {
-                            listBill.map((value, key) => (
-
-                                <div key={key}>
-                                    <ItemBill item={value} />
                                 </div>
 
-                            ))
-                        }
+                                {
+                                    listBill.map((value, key) => (
+
+                                        <div key={key}>
+                                            <ItemBill item={value} />
+                                        </div>
+
+                                    ))
+                                }</>
+                        ) : (
+                            <div style={{ width: '900px' }}>
+                                <NoProducts /></div>
+                        )}
                     </div>
+
+
+
+
+
                 </div>
 
             </div>

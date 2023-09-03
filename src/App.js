@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Cart from './pages/Cart';
 import Account from './pages/Account';
+import Pay from './pages/Pay';
 function App() {
   return (
     <Router>
@@ -23,6 +24,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/account' element={<Account />} />
+        <Route path='/pay' element={<Pay />} />
         <Route path='/:slug' element={<Product />} />
 
 

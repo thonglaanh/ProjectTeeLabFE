@@ -12,34 +12,46 @@ const Slide = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+            // Thay đổi ảnh và thực hiện animation
+            setCurrentImage((prevImage) => {
+                const nextImage = (prevImage + 1) % images.length;
+                animateSlide(nextImage); // Gọi hàm thực hiện animation
+                return nextImage;
+            });
         }, 3000);
 
         return () => {
             clearInterval(interval);
         };
     }, [images.length]);
+    const animateSlide = (nextImage) => {
+        const imageContainer = document.querySelector('.image-container');
+        imageContainer.style.transform = `translateX(-${nextImage * 100}%)`;
+    };
 
     return (
         <div className='container-slide'>
             <div className='image-container'>
-                <img className='img-slide' src={images[currentImage]} alt={`Slide ${currentImage}`} />
-                <div className='image-overlay'>
-                    {
-                        images.map((image, index) => (
-                            <div
-                                key={index}
-                                className={`thumbnail ${index === currentImage ? 'active' : ''}`}
-                                onClick={() => setCurrentImage(index)}
-                            >
-                                <img src={image} alt={`Thumbnail ${index}`} />
-                            </div>
-                        ))
-                    }
-                </div>
+                {images.map((image, index) => (
+                    <img key={index} className='img-slide' src={image} alt={`Slide ${index}`} />
+                ))}
+            </div>
+            <div className='image-overlay'>
+                {
+                    images.map((image, index) => (
+                        <div
+                            key={index}
+                            className={`thumbnail ${index === currentImage ? 'active' : ''}`}
+                            onClick={() => setCurrentImage(index)}
+                        >
+                            <img src={image} alt={`Thumbnail ${index}`} />
+                        </div>
+                    ))
+                }
             </div>
         </div>
     );
+
 
 }
 

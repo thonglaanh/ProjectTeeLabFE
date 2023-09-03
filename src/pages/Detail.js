@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ReactHtmlParse from 'html-react-parser';
@@ -13,6 +13,7 @@ const Detail = () => {
     const location = useLocation();
     const product = location.state.product;
     const token = localStorage.getItem('token');
+    const navigate = useNavigate();
 
     const [color, setColor] = useState(product.colors[0]?.name || '');
     const [quantity, setQuantity] = useState(1);
@@ -75,7 +76,8 @@ const Detail = () => {
                     Authorization: token
                 }
             });
-            alert('Success')
+            navigate('/cart')
+
         } catch (error) {
             alert('Failed:' + error);
 

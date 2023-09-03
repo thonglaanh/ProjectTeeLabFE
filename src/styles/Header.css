@@ -74,7 +74,7 @@ input {
     border-radius: 0px 3px 3px 0px;
 }
 
-label {
+.top-bar label {
     position: absolute;
     left: 1330px;
     top: 6px;

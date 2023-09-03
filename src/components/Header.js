@@ -54,13 +54,14 @@ const Header = () => {
             <div className="top-bar">
                 <form className="search-form">
                     <input type="text" placeholder='Nhập từ khóa tìm kiếm...' onChange={(e) => setSearch(e.target.value)} value={search} />
-                    <Link to={`/all?search=${search}`} onClick={() => setSearch('')}>
+                    <Link to={`/all?search=${search}`} state={{ _id: '1', name: "Tất cả sản phẩm" }} onClick={() => setSearch('')}>
                         <button className='search-button' ><img className='img-search' src={searchIcon} alt="Search" /></button></Link>
                 </form>
                 <a className="top-icon-account" style={{ marginRight: '-7px' }} onClick={() => account ? navigate('/account') : navigate('/login')}><img src={userIcon} /></a>
                 <div>
-                    <a href="" className="top-icon"><img src={shoppingIcon} onClick={handleCartClick} /></a>
-                    {token && (<label>{countCart}</label>)}
+                    <a href="" className="top-icon"><img src={shoppingIcon} onClick={handleCartClick} />{token && (<label>{countCart}</label>)}</a>
+
+
                 </div>
                 <a href="" className="top-icon"><img src={vietnamIcon} /></a>
             </div>
@@ -76,7 +77,7 @@ const Header = () => {
                 </div>
                 <div className="bottom-bar">
                     <ul className="nav-list">
-                        <li><Link to={'/all'}>Tất cả sản phẩm</Link></li>
+                        <li><Link to={'/all'} state={{ _id: '1', name: "Tất cả sản phẩm" }}>Tất cả sản phẩm</Link></li>
                         <li><Link to={'/ao-thun'} state={categories[0]}>Áo thun</Link></li>
                         <li><Link to={'/ao-polo'} state={categories[1]}>Áo Polo</Link></li>
                         <li><Link to={'/ao-somi'} state={categories[2]}>Áo sơ mi</Link></li>

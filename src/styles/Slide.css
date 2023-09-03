@@ -2,17 +2,20 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
+    overflow: hidden;
+    /* Để ẩn phần ngoài khung hình */
 }
 
 .image-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Thực hiện hiệu ứng di chuyển */
     position: relative;
-    overflow: hidden;
 }
 
 .img-slide {
     width: 100%;
     display: block;
-    transition: transform 0.5s ease;
 }
 
 .image-overlay {
@@ -20,11 +23,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    /* Đảm bảo image-overlay giữ nguyên kích thước */
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     padding: 10px 0;
 }
+
 
 .thumbnail {
     margin: 0 5px;

@@ -36,3 +36,16 @@
     border-radius: 3px;
     width: 350px;
 }
+
+.buy-cart:hover {
+    height: 50px;
+    text-align: center;
+    width: calc(50% - 5px);
+    margin-right: 9px;
+    align-items: center;
+    background: #666666;
+    color: #000000;
+    border-radius: 3px;
+    width: 350px;
+    border: none;
+}

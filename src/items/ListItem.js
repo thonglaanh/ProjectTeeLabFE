@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Item from './Item';
 import '../styles/ListItem.css'
+import { Link } from 'react-router-dom';
+import slug from 'slugify'
 
 const ListItem = ({ categories, quantity }) => {
     const [listProduct, setListProduct] = useState([])
@@ -12,6 +14,12 @@ const ListItem = ({ categories, quantity }) => {
         }
         fetchData();
     }, []);
+    const convertToSlug = (text) => {
+        return slug(text, {
+            lower: true,
+            remove: /[*+~.()'"!:@]/g
+        });
+    }
 
     return (
         <div className='container-list'>
@@ -28,7 +36,7 @@ const ListItem = ({ categories, quantity }) => {
                                 </div>
                             ))}
                         <div className='list-item-text'>
-                            <a href="">Xem thêm</a>
+                            <Link to={`/${convertToSlug(category.name)}`} state={category}><a href="">Xem thêm</a></Link>
                         </div>
                     </ul>
 
