@@ -19,6 +19,7 @@ const Account = () => {
         navigate('/login')
     }
     const account = JSON.parse(localStorage.getItem('account'));
+    console.log(account);
     const [listBill, setListBill] = useState([])
     const token = localStorage.getItem('token');
 
@@ -42,19 +43,19 @@ const Account = () => {
         <div>
             {openModal && <EditAccount openModal={openModal} setOpenModal={setOpenModal} />}
             {openModalDelete && <DialogDelete openModal={openModalDelete} setOpenModal={setOpenModalDelete} />}
-            <p style={{ fontSize: '30px', color: '#333', margin: '50px', textAlign: 'center' }}>Thông tin cá nhân</p>
+            <p style={{ fontSize: '30px', color: '#333', margin: '50px 0px 0px 0px', textAlign: 'center' }}>Thông tin cá nhân</p>
             <div className="container-account">
                 <div className="container-account-menu">
-                    <p style={{ color: 'green', fontWeight: 'bold', textDecoration: 'underline' }}>Tài khoản</p>
+                    <p style={{ color: 'green', fontWeight: '450', fontSize: '19px' }}>Tài khoản</p>
                     <a href="" >Thông tin tài khoản</a>
                     <p onClick={() => { setOpenModal(true); }}>Đổi thông tin</p>
                     <a href="" onClick={() => handlerLogOut()}>Đăng xuất</a>
                 </div>
                 <div className="container-account-content">
-                    <p style={{ color: 'green', fontSize: '15px', textDecoration: 'underline', marginBottom: '40px' }}>Thông tin tài khoản</p>
+                    <p style={{ color: 'green', fontSize: '16px', marginBottom: '40px' }}>Thông tin tài khoản</p>
                     <div style={{ display: 'flex', flexDirection: 'row' }}>
                         <>
-                            <img src={account.img} style={{ width: '170px', height: '170px', margin: '10px 30px 20px 20px', borderRadius: '50%' }} /></>
+                            <img src={account.img} style={{ width: '170px', height: '170px', margin: '10px 30px 20px 20px', borderRadius: '50%', objectFit: 'cover' }} /></>
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <p>Tên : {account.name}</p>
                             <p>Địa chỉ email : {account.email}</p>

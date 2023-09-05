@@ -40,12 +40,14 @@
 
 .container-account-content {
     margin-left: 30px;
+    margin-top: 30px;
     border-left: 1px solid #bbbbbb;
 }
 
 .container-account-content p {
     font-size: 15px;
     margin-left: 30px;
+
 }
 
 .container-bill {

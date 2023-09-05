@@ -8,7 +8,7 @@
 
 .modal-container {
     width: 600px;
-    height: 600px;
+    height: 550px;
     margin-top: 150px;
     pointer-events: auto;
     position: absolute;
@@ -40,7 +40,7 @@
     border: none;
     margin: 30px 0px;
     width: 45%;
-    margin: 0px 10px;
+    margin: 15px 10px;
 
 }
 

@@ -52,7 +52,7 @@ const ItemBill = ({ item, setOpenModalDelete }) => {
                 width: '210px',
             }}>Đang chuẩn bị hàng</div>
             <div style={{ float: 'right', position: 'absolute', right: 55, marginTop: '165px' }}>
-                <button style={{ width: '180px', height: '35px', border: 'none', marginRight: '5px', background: 'green', color: '#fff' }}>Chi tiết đơn hàng</button>
+                <button style={{ width: '180px', height: '35px', border: 'none', marginRight: '10px', background: '#666666', color: '#fff' }}>Chi tiết đơn hàng</button>
                 <button style={{ width: '180px', height: '35px', border: 'none' }} onClick={() => { deleteBill(); setOpenModalDelete(true) }}>Hủy đơn hàng</button>
             </div>
         </div>
