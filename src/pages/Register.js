@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/Register.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -25,7 +24,8 @@ const Register = () => {
     const handleSubmit = async () => {
         try {
             if (formData.name === '' || formData.date === '' || formData.email === '' || formData.password === '') {
-                alert('Vui lòng nhập đầy đủ thông tin')
+                toast.error('Vui lòng nhập đầy đủ!', { position: 'top-center' });
+
             } else {
                 await axios.post(url, formData);
                 navigate('/login')
@@ -42,7 +42,6 @@ const Register = () => {
 
     return (
         <div>
-            <Header />
             <div className='container-register'>
                 <div className="title-register"><p>ĐĂNG KÍ</p></div>
                 <input type='text' name='name' placeholder='Nhập tên của bạn' onChange={handleChange} />
@@ -58,7 +57,6 @@ const Register = () => {
                 </div>
                 <button onClick={handleSubmit}>Đăng kí</button>
             </div>
-            <Footer />
         </div>
     );
 };

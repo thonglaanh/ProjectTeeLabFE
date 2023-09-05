@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import axios from 'axios'
 import ItemCart from '../items/ItemCart'
 import '../styles/Cart.css'
@@ -40,7 +38,6 @@ const Cart = () => {
 
     return (
         <div>
-            <Header />
             <div className="container-cart">
                 <p style={{ fontSize: '40px', fontWeight: 'normal', color: '#333333', margin: '50px' }}>Giỏ hàng của bạn</p>
                 {
@@ -84,7 +81,6 @@ const Cart = () => {
                 }
             </div>
 
-            <Footer />
         </div>
     )
 }

@@ -6,6 +6,7 @@ import userIcon from '../assets/account.png'
 import vietnamIcon from '../assets/vietnam.png'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Header = () => {
     const [categories, setCategories] = useState([])
@@ -16,7 +17,7 @@ const Header = () => {
     const navigate = useNavigate();
     const handleCartClick = () => {
         if (!account) {
-            alert('Vui lòng đăng nhập trước khi vào giỏ hàng.');
+            toast.error('Đăng nhập để vào giỏ hàng!', { position: 'top-center' });
         } else {
             navigate('/cart')
         }
@@ -50,7 +51,6 @@ const Header = () => {
     }, []);
     return (
         <div className='container-header'>
-
             <div className="top-bar">
                 <form className="search-form">
                     <input type="text" placeholder='Nhập từ khóa tìm kiếm...' onChange={(e) => setSearch(e.target.value)} value={search} />
@@ -59,9 +59,7 @@ const Header = () => {
                 </form>
                 <a className="top-icon-account" style={{ marginRight: '-7px' }} onClick={() => account ? navigate('/account') : navigate('/login')}><img src={userIcon} /></a>
                 <div>
-                    <a href="" className="top-icon"><img src={shoppingIcon} onClick={handleCartClick} />{token && (<label>{countCart}</label>)}</a>
-
-
+                    <p className="top-icon" style={{ marginTop: '0' }}><img src={shoppingIcon} onClick={handleCartClick} />{token && (<label>{countCart}</label>)}</p>
                 </div>
                 <a href="" className="top-icon"><img src={vietnamIcon} /></a>
             </div>

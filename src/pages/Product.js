@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Item from '../items/Item';
 import axios from 'axios';
 import '../styles/Product.css';
@@ -59,7 +57,6 @@ const Product = () => {
 
     return (
         <div>
-            <Header />
             <div className="container-list-product">
                 <div className='title-list'>
                     {categories._id !== '1' ? categories.name : (
@@ -111,7 +108,6 @@ const Product = () => {
                     )
                 }
             </div>
-            <Footer />
         </div>
     );
 }

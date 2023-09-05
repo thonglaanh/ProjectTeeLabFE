@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import ReactHtmlParse from 'html-react-parser';
 import '../styles/Detail.css';
 import axios from 'axios';
 import Item from '../items/Item';
 import next from '../assets/next.png';
 import back from '../assets/back.png';
+import { toast } from 'react-toastify';
 
 const Detail = () => {
     const location = useLocation();
@@ -63,24 +62,29 @@ const Detail = () => {
         fetchData();
     }, []);
     const addToCart = async () => {
-        try {
-            const data = {
-                size: size,
-                color: color,
-                quantity: quantity,
-                product: product._id
-            }
-            console.log(data);
-            await axios.post('http://localhost:4000/cart/create', data, {
-                headers: {
-                    Authorization: token
+        if (!token) {
+            toast.error('Vui lòng đăng nhập để tiến hành mua hàng!', { position: 'top-center' });
+        } else {
+            try {
+                const data = {
+                    size: size,
+                    color: color,
+                    quantity: quantity,
+                    product: product._id
                 }
-            });
-            navigate('/cart')
+                console.log(data);
+                await axios.post('http://localhost:4000/cart/create', data, {
+                    headers: {
+                        Authorization: token
+                    }
+                });
+                navigate('/cart')
 
-        } catch (error) {
-            alert('Failed:' + error);
+            } catch (error) {
+                toast.error('Thêm sản phẩm vào giỏ thất bại!', { position: 'top-center' });
 
+
+            }
         }
 
     }
@@ -97,9 +101,6 @@ const Detail = () => {
 
     return (
         <div>
-            <Header />
-
-
             <div className="container-product-detail">
                 <div className="product-detail">
                     <div className="product-image">
@@ -200,7 +201,6 @@ const Detail = () => {
                 </div>
 
             </div >
-            <Footer />
 
         </div >
     )

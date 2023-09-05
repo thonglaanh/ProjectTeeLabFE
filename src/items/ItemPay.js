@@ -12,19 +12,6 @@ const ItemPay = ({ item }) => {
     useEffect(() => {
         setSumPrice(priceNumber * quantity)
     }, [quantity])
-    const deleteCart = async () => {
-        try {
-            await axios.delete('http://localhost:4000/cart/delete/' + item._id, {
-                headers: {
-                    Authorization: token
-                }
-            })
-            alert('Success')
-        } catch (error) {
-            alert('Error:' + error)
-
-        }
-    }
     return (
         <div className='container-item-cart' style={{ width: '600px', borderTop: '1px solid #e0e0e0e0' }}>
             <img className='img-cart' src={item.product.images[0]} />

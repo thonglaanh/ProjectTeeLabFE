@@ -1,12 +1,10 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Policy.css'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 const Policy = () => {
+    const [show, setShow] = useState(false)
     return (
         <>
-            <Header />
             <div className='container-policy'>
                 <p className='title-policy'>Chính sách Đổi trả</p>
                 <div className='text-container bold'>
@@ -35,8 +33,6 @@ const Policy = () => {
                 </div>
                 <img src="https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2022/handle_cert.png" alt="" style={{ width: '220px', marginTop: '20px' }} />
             </div>
-
-            <Footer />
         </>
     )
 }

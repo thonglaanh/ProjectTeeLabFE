@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Slide from '../components/Slide'
 import '../styles/Home.css'
 import axios from 'axios'
@@ -35,8 +33,7 @@ const Home = () => {
     }, [categories])
 
     return (
-        <div>
-            <Header />
+        <div >
             <Slide />
             <div className="container-content-home">
                 <div className="section-about">
@@ -61,7 +58,6 @@ const Home = () => {
                 </div>
             </div>
             <div className="br"></div>
-            <Footer />
         </div>
     )
 }

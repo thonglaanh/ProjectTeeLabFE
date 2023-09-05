@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/Login.css'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -14,7 +13,7 @@ const Login = () => {
         e.preventDefault();
 
         if (email === '' || password === '') {
-            alert('Vui lòng nhập đầy đủ thông tin.');
+            toast.error('Vui lòng nhập đầy đủ thông tin!', { position: 'top-center' });
         } else {
             try {
                 const response = await axios.post(url, { email, password });
@@ -23,20 +22,21 @@ const Login = () => {
 
                 console.log(JSON.stringify(response.data.data.account));
                 console.log(response.data.data.token);
+                toast.success('Đăng nhập thành công!', { position: 'top-center' });
                 navigate('/');
             } catch (error) {
-                if (error.response && error.response.status === 401) {
-                    alert("Sai mật khẩu!!");
+                if (error.response && error.response.status === 402) {
+                    toast.error('Sai mật khẩu!', { position: 'top-center' });
                 } else {
                     console.log(error);
-                    alert("Tài khoản chưa tồn tại");
+                    toast.error('Email không tồn tại!', { position: 'top-center' });
                 }
             }
         }
     };
+
     return (
         <div>
-            <Header />
             <div className='container-login'>
                 <div className="title-login"><p>ĐĂNG NHẬP</p></div>
                 <form onSubmit={handleSubmit}>
@@ -47,7 +47,6 @@ const Login = () => {
                 </form>
 
             </div>
-            <Footer />
         </div>
     )
 }

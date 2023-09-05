@@ -1,11 +1,8 @@
 import React from 'react'
 import '../styles/About.css'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 const About = () => {
     return (
         <div>
-            <Header />
             <div className="about">
                 <p className='header-about' style={{ margin: '30px 0px', fontWeight: 'bold' }}>About us</p>
                 <p class="title-about">WHO WE ARE<br />TEELAB - Share your Color<br />/ Ti - láp /</p>
@@ -27,7 +24,6 @@ const About = () => {
 
                 </img>
             </div>
-            <Footer />
         </div>
     )
 }

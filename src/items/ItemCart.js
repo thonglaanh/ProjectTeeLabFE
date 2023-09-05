@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/ItemCart.css'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const ItemCart = ({ item }) => {
     const [quantity, setQuantity] = useState(Number.parseInt(item.quantity))
@@ -24,9 +25,9 @@ const ItemCart = ({ item }) => {
                     Authorization: token
                 }
             })
-            alert('Success')
+            toast.success('Xóa sản phẩm thành công!', { position: 'top-center' });
         } catch (error) {
-            alert('Error:' + error)
+            toast.error('Xóa sản phẩm thất bại!', { position: 'top-center' });
 
         }
     }

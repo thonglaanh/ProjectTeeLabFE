@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import axios from 'axios';
 import '../styles/Pay.css'
 import vietnamIcon from '../assets/vietnam.png'
 import ItemPay from '../items/ItemPay';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const Pay = () => {
     const account = JSON.parse(localStorage.getItem('account'));
+    const navigate = useNavigate()
 
     const [cities, setCities] = useState([]);
     const [districts, setDistricts] = useState([]);
@@ -47,38 +48,47 @@ const Pay = () => {
         setNumPrice(totalPrice);
     }, [listCart]);
     const addToBill = async () => {
-        try {
-            const productsInCart = listCart.map((cartItem) => ({
-                size: cartItem.size,
-                color: cartItem.color,
-                quantity: cartItem.quantity,
-                product: cartItem.product,
-            }));
+        if (selectedWardInfor.path_with_type === '' || phone === '') {
+            toast.error('Vui lòng nhập thông tin địa chỉ !', { position: 'top-center' });
+        } else {
+            try {
+                const promises = [];
 
-            const data = {
-                address: selectedWardInfor.path_with_type,
-                phone: phone,
-                cart: productsInCart,
-            };
+                for (const cartItem of listCart) {
+                    const data = {
+                        address: selectedWardInfor.path_with_type,
+                        phone: phone,
+                        size: cartItem.size,
+                        color: cartItem.color,
+                        quantity: cartItem.quantity,
+                        product: cartItem.product,
+                    };
+                    promises.push(
+                        axios.post('http://localhost:4000/bill/create', data, {
+                            headers: {
+                                Authorization: token,
+                            },
+                        })
+                    );
+                    promises.push(
+                        axios.delete('http://localhost:4000/cart/delete/' + cartItem._id, {
+                            headers: {
+                                Authorization: token,
+                            },
+                        })
+                    );
+                }
 
-            await axios.post('http://localhost:4000/bill/create', data, {
-                headers: {
-                    Authorization: token,
-                },
-            });
-            for (const cartItem of listCart) {
-                await axios.delete('http://localhost:4000/cart/delete/' + cartItem._id, {
-                    headers: {
-                        Authorization: token,
-                    },
-                });
+
+                await Promise.all(promises);
+
+            } catch (error) {
+                alert('Failed:' + error);
             }
-
-            alert('Success');
-        } catch (error) {
-            alert('Failed:' + error);
         }
     }
+
+
 
 
 
@@ -118,7 +128,6 @@ const Pay = () => {
 
     return (
         <div>
-            <Header />
             <div className="container-pay">
                 <p style={{ fontSize: '40px', fontWeight: 'normal', color: '#333333', margin: '50px', textAlign: 'center' }}>Thanh toán</p>
                 <div className="container-content-pay">
@@ -246,7 +255,6 @@ const Pay = () => {
 
 
             </div>
-            <Footer />
         </div>
 
     );

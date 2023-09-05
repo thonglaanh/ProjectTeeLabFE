@@ -10,11 +10,24 @@
     width: 230px;
 }
 
-.container-account-menu a {
+.container-account-menu a,
+.container-account-menu p {
     text-decoration: none;
     color: #777777;
     font-size: 15px;
     margin-top: 30px;
+}
+
+.container-account-menu p {
+    margin-top: 40px;
+}
+
+.container-account-menu p:hover {
+    margin-top: 40px;
+    text-decoration: none;
+    color: cadetblue;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .container-account-menu a:hover {
