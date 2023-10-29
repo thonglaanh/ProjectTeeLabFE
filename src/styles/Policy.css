@@ -1,12 +1,12 @@
 .container-policy {
-    width: 1200px;
+    max-width: 100%;
     margin: 100px 134px 80px 134px;
     line-height: 30px;
 }
 
 .text-container {
     font-family: Tahoma, Geneva, sans-serif;
-    font-size: 14px;
+    font-size: 0.9rem;
     margin-bottom: 10px;
 }
 
@@ -31,4 +31,20 @@
 
 .normal {
     font-weight: normal;
+}
+
+@media (max-width:1023px) {
+    .container-policy {
+        margin: 30px;
+    }
+
+    .text-container {
+        font-size: 0.7rem;
+    }
+
+    .title-policy {
+        font-size: 1.9rem;
+        margin-top: 70px;
+    }
+
 }

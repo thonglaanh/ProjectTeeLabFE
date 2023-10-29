@@ -39,7 +39,7 @@ const Cart = () => {
     return (
         <div>
             <div className="container-cart">
-                <p style={{ fontSize: '40px', fontWeight: 'normal', color: '#333333', margin: '50px' }}>Giỏ hàng của bạn</p>
+                <p className='title-cart'>Giỏ hàng của bạn</p>
                 {
                     listCart.length > 0 ? (
                         <>
@@ -60,7 +60,7 @@ const Cart = () => {
                                 ))
                             }
                             <div className="cart-num-price">
-                                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '340px', margin: '0px 15px' }}>
+                                <div className='cart-price'>
                                     <p style={{ fontSize: '15px', flex: 1, textAlign: 'left' }}>Tổng tiền :</p>
                                     <p style={{ fontSize: '18px', fontWeight: 'bold', color: 'red', flex: 1, textAlign: 'right' }}>{numPrice.toLocaleString("vi-VN", {
                                         style: "currency",

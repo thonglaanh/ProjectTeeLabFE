@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import '../styles/Policy.css'
 const Policy = () => {
-    const [show, setShow] = useState(false)
     return (
         <>
             <div className='container-policy'>

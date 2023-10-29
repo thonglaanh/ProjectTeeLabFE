@@ -4,9 +4,9 @@ const About = () => {
     return (
         <div>
             <div className="about">
-                <p className='header-about' style={{ margin: '30px 0px', fontWeight: 'bold' }}>About us</p>
+                <p className='header-about' >About us</p>
                 <p class="title-about">WHO WE ARE<br />TEELAB - Share your Color<br />/ Ti - láp /</p>
-                <p class="content-about" style={{ margin: '60px 0px 0px 0px' }}>Teelab là thương hiệu thời trang đường phố dẫn dầu xu hướng với phong cách thiết kế đơn giản, sành điệu, <br />sản phẩm tiêu chuẩn cao dành cho giới trẻ toàn cầu tự tin thể hiện cá tính. </p>
+                <p class="content-about" >Teelab là thương hiệu thời trang đường phố dẫn dầu xu hướng với phong cách thiết kế đơn giản, sành điệu, <br />sản phẩm tiêu chuẩn cao dành cho giới trẻ toàn cầu tự tin thể hiện cá tính. </p>
                 <img src="https://levents.asia/wp-content/uploads/elementor/thumbs/homepage-ngang-4-1-scaled-prlzs731tmqluu3qoxoodpyzvmm53nywlrfokljhu8.jpg" title="Homepage Ngang 4" alt="Homepage Ngang 4"></img>
                 <div className="container-content">
                     <p class="title-about">WHAT WE DO<br />Young generation ally</p>

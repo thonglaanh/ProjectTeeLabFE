@@ -32,3 +32,12 @@
 .scrollUpButton.show {
     display: block;
 }
+
+@media (max-width:1023px) {
+    .scrollUpButton {
+        width: 15px;
+        height: 15px;
+        bottom: 20px;
+        right: 15px;
+    }
+}

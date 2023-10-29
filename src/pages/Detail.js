@@ -124,7 +124,7 @@ const Detail = () => {
                         </div>
                     </div>
 
-                    <div className="product-content" style={{ marginLeft: '50px' }}>
+                    <div className="product-content">
                         <div className="product-name">{product.name}</div>
                         <div className='product-value'>
                             <div className="product-price">{product.price}</div>
@@ -180,7 +180,7 @@ const Detail = () => {
 
                 </div>
                 <div className='product-description'>
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '385px', height: '50px', border: '1px solid black', borderRadius: '5px' }}>
+                    <div className='title-description'>
                         MÔ TẢ SẢN PHẨM
                     </div>
                     {ReactHtmlParse(product.description)}

@@ -1,0 +1,9 @@
+.container-size {
+    margin: 5% 10%
+}
+
+@media (max-width:1023px) {
+    .container-size {
+        margin: 20% 10%;
+    }
+}

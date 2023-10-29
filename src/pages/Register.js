@@ -25,10 +25,11 @@ const Register = () => {
         try {
             if (formData.name === '' || formData.date === '' || formData.email === '' || formData.password === '') {
                 toast.error('Vui lòng nhập đầy đủ!', { position: 'top-center' });
+                navigate('/login')
 
             } else {
                 await axios.post(url, formData);
-                navigate('/login')
+                toast.success('Đăng kí thành công!', { position: 'top-center' });
             }
 
 

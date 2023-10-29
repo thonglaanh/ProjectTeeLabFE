@@ -2,12 +2,13 @@
     font-size: 40px
 }
 
-.list-item {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+.container-list {
+    padding: 0.5rem 7rem;
+}
 
+.list-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .list-item>div {
@@ -15,12 +16,33 @@
 }
 
 .list-item-text {
-    text-align: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 120px;
 }
+
 
 .list-item-text a {
     font-weight: bold;
     color: black;
+}
+
+@media (max-width:1023px) {
+    .title-category {
+        font-size: 20px
+    }
+
+    .container-list {
+        padding: 0.5rem 1rem;
+    }
+
+    .list-item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .list-item-text a {
+        font-size: 0.9rem;
+    }
 }

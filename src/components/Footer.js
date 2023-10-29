@@ -44,7 +44,7 @@ const Footer = () => {
                 </div>
 
             </div>
-            <div className="product">
+            <div className="product-footer">
                 <div className="title">
                     DANH MỤC SẢN PHẨM
                 </div>
@@ -65,8 +65,9 @@ const Footer = () => {
                 </div>
                 <div className='shop-content'>
                     <a href="">139E Nguyễn Trãi, Phường Phạm Ngũ Lão, Quận 1, HCM - COMING SOON</a>
-                    <a href="">842 Sư Vạn Hạnh, Phường 12, Quận 10, HCM</a>
+                    <a href="">8 Sư Vạn Hạnh, Phường 12, Quận 10, HCM</a>
                     <a href="">The New Playground, 04, Quận 1, HCM</a>
+
                     <a href="">54, Mậu Thân, Phường Xuân Khánh, Quận Ninh Kiều, Cần Thơ</a>
                     <div className='shop-content-icon'>
                         <img src='https://levents.asia/template/assets/images/svg/ic-fb.svg' />

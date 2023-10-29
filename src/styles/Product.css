@@ -5,13 +5,12 @@
 }
 
 .container-list-product {
-    margin: 0px 150px;
+    margin: 0px 50px;
 }
 
 .pagination {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -39,4 +38,21 @@
 .pagination-btn.disabled {
     cursor: not-allowed;
     opacity: 0.5;
+}
+
+@media (max-width:739px) {
+    .title-list {
+        font-size: 25px;
+
+    }
+
+    .container-list-product {
+        margin: 0px 0px 0px 15px;
+    }
+
+    .pagination-btn {
+        padding: 6px 9px;
+        font-size: 14px;
+
+    }
 }

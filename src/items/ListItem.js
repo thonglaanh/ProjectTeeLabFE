@@ -26,7 +26,7 @@ const ListItem = ({ categories, quantity }) => {
             {categories.map((category, index) => (
                 <div key={index}>
                     <p className='title-category'>{category.name}</p>
-                    <ul className='list-item'>
+                    <div className='list-item'>
                         {listProduct
                             .filter(item => item.category._id === category._id)
                             .slice(0, quantity)
@@ -38,7 +38,7 @@ const ListItem = ({ categories, quantity }) => {
                         <div className='list-item-text'>
                             <Link to={`/${convertToSlug(category.name)}`} state={category}><a href="">Xem thêm</a></Link>
                         </div>
-                    </ul>
+                    </div>
 
                 </div>
             ))}

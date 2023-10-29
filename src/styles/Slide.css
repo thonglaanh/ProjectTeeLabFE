@@ -52,3 +52,10 @@
 .thumbnail:hover {
     opacity: 0.7;
 }
+
+@media (max-width:1023px) {
+    .thumbnail img {
+        width: 30px;
+        height: 10px;
+    }
+}
